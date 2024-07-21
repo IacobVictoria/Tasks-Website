@@ -1,0 +1,49 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 6em;
+  background-color: #00274d;
+  color: #ffffff;
+  position: relative;
+}
+
+header > img {
+  width: 4em;
+  border-radius: 50%;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.search-container input {
+  padding: 0.5em 1em;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 2em; 
+  background-color: transparent;
+  color: #ffffff;
+  outline: none;
+  transition: border-color 0.3s ease;
+  width: 20em; 
+}
+
+.search-container input::placeholder {
+  color: #ffffff;
+}
+
+.search-container input:focus {
+  border-color: #0056b3;
+}
+
+.search-container .search-icon {
+    width: 2em;
+    cursor: pointer;
+}
+
+svg {
+  cursor: pointer;
+}

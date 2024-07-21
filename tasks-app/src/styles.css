@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-size: 1rem;
+  font-family: 'Open sans', sans-serif;
+}
+
+app-root {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "nav main"
+    "footer footer";
+  grid-template-rows: 5em 1fr 6.25em;
+  grid-template-columns: 16em 1fr;
+  row-gap: 3em;
+  column-gap: 3em;
+
+}

@@ -1,0 +1,21 @@
+<section class="team-section">
+  <h1>Meet Our Team</h1>
+  <img src="assets/team-logo.jpg" alt="Team Logo" />
+  <div class="team-description">
+    Our people are the key. Friendly, smart, caring, loyal, talented, genuine…
+    in one word: awesome! And we love working together, so much so that some of
+    us have been here for more than 10 years.
+  </div>
+  @if(members.length > 0){
+  <div class="team-container">
+    @for(member of members; track member.id){
+
+    <app-team-member
+      [member]="member"
+      (memberSelected)="navigateToMember($event)"
+    ></app-team-member>
+
+    }
+  </div>
+  }
+</section>

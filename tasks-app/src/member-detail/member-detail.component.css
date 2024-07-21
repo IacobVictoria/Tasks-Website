@@ -1,0 +1,114 @@
+.member-detail {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+.member-name h1 {
+  margin: 0;
+  font-size: 2em;
+  color: #333;
+}
+
+.member-image {
+  margin: 16px 0;
+}
+
+.member-image img {
+  max-width: 100%;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.member-description {
+  margin-top: 16px;
+}
+
+.member-description p {
+  font-size: 1em;
+  color: #555;
+}
+
+h2 {
+  font-size: 1.5em;
+  color: #333;
+  margin-top: 32px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.tasks-container {
+  margin-top: 16px;
+}
+
+.task-container {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 8px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.task-header h2 {
+  margin: 0;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.task-body p {
+  margin: 8px 0;
+  font-size: 1em;
+  color: #555;
+}
+
+.task-footer {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-footer p {
+  margin: 0;
+}
+
+.task-footer button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 0.9em;
+  margin-left: 8px;
+}
+
+.task-footer button:hover {
+  background-color: #0056b3;
+}
+
+.task-footer button:nth-of-type(2) {
+  background-color: #dc3545;
+}
+
+.task-footer button:nth-of-type(2):hover {
+  background-color: #c82333;
+}

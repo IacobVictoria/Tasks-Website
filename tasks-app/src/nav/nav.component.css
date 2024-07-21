@@ -1,0 +1,31 @@
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #ffffff;
+  padding: 2em;
+  border-radius: 1em;
+  margin: 5em 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  height: 50em;
+}
+
+nav a {
+  color: #00274d;
+  background-color: #ffffff;
+  border: 2px solid #00274d;
+  text-decoration: none;
+  font-size: 1.2em;
+  margin: 0.5em 0;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav a:hover {
+  background-color: #00274d;
+  color: #ffffff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}

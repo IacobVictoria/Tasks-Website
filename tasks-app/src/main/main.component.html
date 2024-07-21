@@ -1,0 +1,39 @@
+<main>
+  <section class="about-us">
+    <img src="assets/teamwork.jpg" alt="" />
+    <div class="paragraph">
+      <h1>About us</h1>
+      <p>
+        We are a Danish IT consultancy company that provides software
+        development, testing, and consultancy services to help clients
+        worldwide.
+      </p>
+      <p>
+        We specialize in Digitalization, Energy, Workforce & Facility
+        Management, Wireless Communication & Automation, and Trade & E-commerce.
+        At Wirtek, we prioritize building long-term client relationships, with
+        some lasting over a decade. We believe that quality partnerships are
+        just as important as software quality in achieving our clients’ goals.
+      </p>
+      <p>
+        Established in 2001, we have offices in Denmark and Romania and have
+        been listed on Nasdaq First North Copenhagen since 2006.
+      </p>
+    </div>
+  </section>
+  <section class="company-history">
+    <h2>Brief Company History</h2>
+    @if(infos){
+    <ul>
+      @for(item of infos; track item.id){
+      <li>
+        <button class="year-button">{{ item.year }}</button>
+        <div class="event-text">
+          <p>{{ item.event }}</p>
+        </div>
+      </li>
+      }
+    </ul>
+    }
+  </section>
+</main>

@@ -1,0 +1,19 @@
+app-nav {
+  grid-area: nav;
+}
+
+app-header {
+  grid-area: header;
+}
+
+app-footer {
+  grid-area: footer;
+}
+
+app-main {
+  grid-area: main;
+}
+
+app-team{
+grid-area: main;
+}
