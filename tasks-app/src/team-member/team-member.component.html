@@ -1,0 +1,13 @@
+<div class="team-member">
+  <img
+    [src]="member.technologies[0]"
+    alt="{{ member.name }}"
+    class="member-image"
+  />
+  <div class="member-info">
+    <h3 class="member-name" (click)="onMemberClick()">
+      {{ member.name }}
+    </h3>
+    <p class="member-description">{{ member.description }}</p>
+  </div>
+</div>

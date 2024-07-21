@@ -13,3 +13,7 @@ app-footer {
 app-main {
   grid-area: main;
 }
+
+app-team{
+grid-area: main;
+}

@@ -1,0 +1,17 @@
+@if(member){
+<div class="member-detail">
+  <div class="member-name">
+    <h1>{{ member.name }}</h1>
+  </div>
+  <div class="member-image">
+    <img [src]="member.technologies[0]" alt="{{ member.name }}" />
+  </div>
+  <div class="member-description">
+    <p>{{ member.description }}</p>
+  </div>
+</div>
+<h2>Tasks:</h2>
+<button (click)="navigateToForm()">Add Tasks</button>
+@for(task of tasks; track task.id){
+<app-task [task]="task" (delete)="deleteTask($event)"></app-task>
+} }

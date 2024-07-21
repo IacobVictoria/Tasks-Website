@@ -1,0 +1,77 @@
+main {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+  background-color: #ffffff;
+}
+
+.year-button {
+  background-color: #003d7a;
+  color: #ffffff;
+  border: none;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  border-radius: 0.5em;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+.year-button:hover {
+  background-color: #00274d;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.event-text {
+  border: 2px solid #ff0000;
+  padding: 1em;
+  margin-top: 0.5em;
+  border-radius: 0.5em;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.event-text p {
+  color: #003d7a;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  border-radius: 0.5em;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  align-items: center;
+}
+
+h1,
+h2 {
+  color: #003d7a;
+}
+
+.about-us {
+  display: flex;
+  gap: 2em;
+}
+
+img {
+  width: 40em;
+}
+
+.paragraph {
+  display: flex;
+  flex-direction: column;
+  background-color: #e6f0ff;
+  padding: 1em;
+  border-radius: 0.5em;
+}
