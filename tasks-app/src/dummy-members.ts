@@ -1,4 +1,4 @@
-import { Member } from './team-member.interface';
+import { Member } from './_interfaces/team-member.interface';
 
 export const members: Member[] = [
   {

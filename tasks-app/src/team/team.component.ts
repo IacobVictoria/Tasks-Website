@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { Member } from '../team-member.interface';
+import { Member } from '../_interfaces/team-member.interface';
 import { TeamMemberComponent } from '../team-member/team-member.component';
-import { MemberService } from '../members-service.service';
+import { MemberService } from '../_services/members-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 

@@ -6,8 +6,8 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { Member } from '../team-member.interface';
-import { MemberService } from '../members-service.service';
+import { Member } from '../_interfaces/team-member.interface';
+import { MemberService } from '../_services/members-service.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

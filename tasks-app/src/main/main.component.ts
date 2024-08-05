@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { InfoCompany } from '../infoCompany.interface';
+import { InfoCompany } from '../_interfaces/infoCompany.interface';
 import { companyHistory } from '../dummy-info';
 
 @Component({
