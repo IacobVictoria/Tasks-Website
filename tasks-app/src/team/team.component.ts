@@ -1,9 +1,9 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { Member } from '../_interfaces/team-member.interface';
 import { TeamMemberComponent } from '../team-member/team-member.component';
 import { MemberService } from '../_services/members-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { SummaryMember } from '../_interfaces/team-member.interface';
 
 @Component({
   selector: 'app-team',
@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './team.component.css',
 })
 export class TeamComponent implements OnInit {
-  members: Member[] = [];
+  members: SummaryMember[] = [];
   private memberService: MemberService = inject(MemberService);
   private router: Router = inject(Router);
   private route: ActivatedRoute = inject(ActivatedRoute);
@@ -23,7 +23,7 @@ export class TeamComponent implements OnInit {
   }
 
   getMembers() {
-    this.memberService.getServices().subscribe((members: Member[]) => {
+    this.memberService.getServices().subscribe((members: SummaryMember[]) => {
       this.members = members;
     });
   }

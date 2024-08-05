@@ -1,13 +1,13 @@
 <div class="team-member">
   <img
-    [src]="member.technologies[0]"
-    alt="{{ member.name }}"
+    [src]="member.avatar"
+    alt="{{ member.lastName }}"
     class="member-image"
   />
   <div class="member-info">
     <h3 class="member-name" (click)="onMemberClick()">
-      {{ member.name }}
+      {{ member.lastName }} {{member.firstName}}
     </h3>
-    <p class="member-description">{{ member.description }}</p>
+    <p class="member-description">{{ member.jobDescription }}</p>
   </div>
 </div>

@@ -3,11 +3,10 @@
     <h2 class="task-title">{{ task.title }}</h2>
   </div>
   <div class="task-body">
-    <p class="task-description">{{ task.description }}</p>
+    <p class="task-description">{{ task.dueDate }}</p>
   </div>
   <div class="task-footer">
     <p class="task-user">Assigned to: {{ task.userId }}</p>
-    <p class="task-project">Project ID: {{ task.projectId }}</p>
     <button (click)="editTask()">Edit</button>
     <button (click)="deleteTask()">Delete</button>
   </div>

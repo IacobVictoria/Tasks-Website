@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Task } from './task.interface';
+import { ActiveTask } from '../../_interfaces/task_active.interface';
 
 @Component({
   selector: 'app-task',
@@ -9,7 +10,7 @@ import { Task } from './task.interface';
   styleUrl: './task.component.css',
 })
 export class TaskComponent {
-  @Input() task!: Task;
+  @Input() task!: ActiveTask;
   @Output() edit = new EventEmitter<string>();
   @Output() delete = new EventEmitter<string>();
 

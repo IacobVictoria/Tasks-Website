@@ -1,6 +1,7 @@
-export interface Member {
+export interface SummaryMember {
   id: string;
-  name: string;
-  description: string;
-  technologies: string[];
+  firstName: string;
+  lastName: string;
+  avatar: string;
+  jobDescription: string
 }

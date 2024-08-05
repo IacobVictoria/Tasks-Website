@@ -5,31 +5,58 @@
   margin: 16px 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   background-color: #f9f9f9;
+  flex: 1;
+  margin-right: 5em;
+  margin-top: 5em;
+}
+
+.member-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
 }
 
 .member-name h1 {
   margin: 0;
   font-size: 2em;
   color: #333;
+  flex: 1;
 }
 
 .member-image {
-  margin: 16px 0;
+  margin-left: 16px;
 }
 
 .member-image img {
-  max-width: 100%;
+  max-width: 80px;
   border-radius: 8px;
   border: 1px solid #ddd;
 }
 
-.member-description {
+.member-info {
   margin-top: 16px;
 }
 
-.member-description p {
+.member-job-description p {
+  margin: 5px 0;
   font-size: 1em;
   color: #555;
+}
+
+.member-contact-education {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.member-contact-details,
+.member-education-details {
+  flex: 1;
+  margin-right: 16px;
+}
+
+.member-education-details {
+  margin-right: 0;
 }
 
 h2 {
@@ -56,15 +83,8 @@ button:hover {
 
 .tasks-container {
   margin-top: 16px;
-}
-
-.task-container {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 16px;
-  margin: 8px 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  flex: 1;
+  margin-right: 5em;
 }
 
 .task-header h2 {

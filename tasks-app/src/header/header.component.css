@@ -2,13 +2,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding:1em;
+  padding: 1em;
   background-color: #00274d;
   color: #ffffff;
   position: fixed;
   width: 100%;
   z-index: 1000;
-
+  box-sizing: border-box; 
 }
 
 header > img {
@@ -19,6 +19,7 @@ header > img {
 .search-container {
   display: flex;
   align-items: center;
+  margin: 0 1em; 
 }
 
 .search-container input {
@@ -30,7 +31,7 @@ header > img {
   color: #ffffff;
   outline: none;
   transition: border-color 0.3s ease;
-  width: 20em;
+  min-width: 20em; 
 }
 
 .search-container input::placeholder {
@@ -43,7 +44,7 @@ header > img {
 
 .search-container .search-icon {
   cursor: pointer;
-  margin-left: 0.5em; 
+  margin-left: 0.5em;
 }
 
 .redirect-button {
@@ -63,3 +64,5 @@ header > img {
 svg {
   cursor: pointer;
 }
+
+
