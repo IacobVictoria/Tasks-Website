@@ -1,4 +1,4 @@
-import { InfoCompany } from './infoCompany.interface';
+import { InfoCompany } from './_interfaces/infoCompany.interface';
 
 export const companyHistory: InfoCompany[] = [
   {

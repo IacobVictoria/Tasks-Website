@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { Member } from '../team-member.interface';
+import { Member } from '../_interfaces/team-member.interface';
 import { ActivatedRoute, Route, Router } from '@angular/router';
-import { MemberService } from '../members-service.service';
+import { MemberService } from '../_services/members-service.service';
 import { dummyTasks } from '../task-folder/dummy-tasks';
 import { Task } from '../task-folder/task/task.interface';
 import { TaskComponent } from '../task-folder/task/task.component';
