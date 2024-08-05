@@ -6,7 +6,7 @@ export const dummyTasks: Task[] = [
     title: 'Design the login page',
     description:
       'Create a modern and user-friendly login page for the application.',
-    userId: '669c182bee46a7b30fd6c64a', // Alice Johnson
+    userId: '66b1032ec2798e5a52f69fd2', // Alice Johnson
     projectId: 'project1',
   },
   {
@@ -14,7 +14,7 @@ export const dummyTasks: Task[] = [
     title: 'Implement API endpoints',
     description:
       'Develop and test the API endpoints for user authentication and data retrieval.',
-    userId: '669c187aee46a7b30fd6c64b', // Bob Smith
+    userId: '66b1032ec2798e5a52f69fd2', // Bob Smith
     projectId: 'project2',
   },
   {
@@ -37,7 +37,7 @@ export const dummyTasks: Task[] = [
     title: 'Database optimization',
     description:
       'Optimize the database queries to improve application performance.',
-    userId: '669c1898ee46a7b30fd6c64e', // Edward Carter
+    userId: '66b1032ec2798e5a52f69fd2', // Edward Carter
     projectId: 'project5',
   },
   {
@@ -45,7 +45,7 @@ export const dummyTasks: Task[] = [
     title: 'Data analysis report',
     description:
       'Generate a report on user behavior and trends based on recent data.',
-    userId: '669c18a0ee46a7b30fd6c64f', // Fiona Green
+    userId: '66b10381c2798e5a52f69fd4', // Fiona Green
     projectId: 'project6',
   },
   {
@@ -53,7 +53,7 @@ export const dummyTasks: Task[] = [
     title: 'Angular report',
     description:
       'Generate a report on user behavior and trends based on recent data.',
-    userId: '669c18a0ee46a7b30fd6c64f', // Fiona Green
+    userId: '66b10381c2798e5a52f69fd4', // Fiona Green
     projectId: 'project6',
   },
   {

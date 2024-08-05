@@ -1,0 +1,46 @@
+.confirmation-dialog {
+    border: 1px solid #ccc;
+    padding: 20px; /* Increased padding for better spacing */
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    position: fixed; /* Fixed position for centering */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centering trick */
+    z-index: 1000; /* Ensure it appears above other content */
+    border-radius: 8px; /* Rounded corners */
+    width: 300px; /* Set a fixed width */
+    text-align: center; /* Center text */
+  }
+  
+  .confirmation-dialog h2 {
+    margin-bottom: 16px; /* Spacing below the title */
+  }
+  
+  .confirmation-dialog button {
+    margin: 0 8px; /* Horizontal margin for buttons */
+    padding: 10px 16px; /* Padding for buttons */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer */
+    font-weight: bold; /* Make button text bold */
+  }
+  
+  .confirmation-dialog button.yes {
+    background-color: #4caf50; /* Green for Yes button */
+    color: white; /* White text */
+  }
+  
+  .confirmation-dialog button.no {
+    background-color: #f44336; /* Red for No button */
+    color: white; /* White text */
+  }
+  
+  .confirmation-dialog button:hover {
+    opacity: 0.9; /* Slight opacity change on hover */
+  }
+  
+  .confirmation-dialog button:active {
+    transform: scale(0.98); /* Scale down effect when button is pressed */
+  }
+  

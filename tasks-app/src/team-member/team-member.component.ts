@@ -6,7 +6,7 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { Member } from '../_interfaces/team-member.interface';
+import { SummaryMember } from '../_interfaces/team-member.interface';
 import { MemberService } from '../_services/members-service.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -18,7 +18,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './team-member.component.css',
 })
 export class TeamMemberComponent {
-  @Input() member!: Member;
+  @Input() member!: SummaryMember;
   @Output() memberSelected = new EventEmitter<string>();
 
   onMemberClick() {

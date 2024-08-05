@@ -1,17 +1,53 @@
-@if(member){
+@if(member) {
 <div class="member-detail">
-  <div class="member-name">
-    <h1>{{ member.name }}</h1>
+  <div class="member-header">
+    <div class="member-name">
+      <h1>{{ member.lastName }} {{ member.firstName }}</h1>
+    </div>
+    <div class="member-image">
+      <img [src]="member.avatar" alt="{{ member.lastName }}" />
+    </div>
   </div>
-  <div class="member-image">
-    <img [src]="member.technologies[0]" alt="{{ member.name }}" />
-  </div>
-  <div class="member-description">
-    <p>{{ member.description }}</p>
+  <div class="member-info">
+    <div class="member-job-description">
+      <p>{{ member.jobDescription }}</p>
+    </div>
+    <div class="member-contact-education">
+      <div class="member-contact-details">
+        <h6>Contact Details</h6>
+        <p>Email: {{ member.contactDetails.email }}</p>
+        <p>Phone: {{ member.contactDetails.phoneNumber }}</p>
+        <p>
+          LinkedIn:
+          <a [href]="member.contactDetails.linkedin" target="_blank">{{
+            member.contactDetails.linkedin
+          }}</a>
+        </p>
+      </div>
+      <div class="member-education-details">
+        <h6>Education Details</h6>
+        <p>Institution: {{ member.educationDetails.institution }}</p>
+        <p>Section: {{ member.educationDetails.section }}</p>
+        <p>Level: {{ member.educationDetails.level }}</p>
+        <p>Start Date: {{ member.educationDetails.startDate }}</p>
+        <p>Due Date: {{ member.educationDetails.dueDate }}</p>
+        <p>End Date: {{ member.educationDetails.endDate }}</p>
+        <p>Description: {{ member.educationDetails.description }}</p>
+      </div>
+    </div>
   </div>
 </div>
 <h2>Tasks:</h2>
 <button (click)="navigateToForm()">Add Tasks</button>
-@for(task of tasks; track task.id){
-<app-task [task]="task" (delete)="deleteTask($event)"></app-task>
-} }
+<div class="tasks-container">
+  @for(task of tasks; track task.id) {
+  <app-task [task]="task" (delete)="deleteTask($event)"></app-task>
+  }
+</div>
+@if(showConfirmationDialog){
+<app-confirmation-dialog
+  [message]="'Are you sure you want to delete this task?'"
+  (confirm)="onConfirmedDelete($event)"
+></app-confirmation-dialog>
+} 
+}
