@@ -1,0 +1,11 @@
+<div>
+    <label *ngIf="heading">{{ heading }}</label>
+    <select (change)="onSelect($event)">
+         <!-- cand apas pe cv tr sa emit -->
+      <option [value]="null">{{ placeholder }}</option>
+      <option *ngFor="let item of config.items" [value]="item[valueField]">
+        {{ item[labelField] }}
+      </option>
+    </select>
+  </div>
+  

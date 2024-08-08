@@ -1,22 +1,21 @@
 <form [formGroup]="formGroupTask" (ngSubmit)="onSubmit()" class="task-form">
   <div class="form-group">
     <label for="title">Title:</label>
-    <input
-      type="text"
-      id="title"
-      name="title"
-      formControlName="title"
-      required
-    />
+    <input type="text" id="title" formControlName="title" required />
   </div>
   <div class="form-group">
     <label for="description">Description:</label>
-    <textarea
-      id="description"
-      name="description"
-      formControlName="description"
-      required
-    ></textarea>
+    <textarea id="description" formControlName="description" required></textarea>
+    <app-dropdown-reusable
+      [config]="{
+        items: members,
+        valueField: 'id',
+        labelField: 'name',
+        placeholder: 'Select a member',
+        heading: 'Assign to a Member'
+      }"
+      (selectionChanged)="onMemberSelect($event)">
+    </app-dropdown-reusable>
   </div>
   <button type="submit" [disabled]="!formGroupTask.valid">Add Task</button>
 </form>

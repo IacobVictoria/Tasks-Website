@@ -1,8 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { MemberService } from '../_services/members-service.service';
-import { dummyTasks } from '../task-folder/dummy-tasks';
-import { Task } from '../task-folder/task/task.interface';
 import { TaskComponent } from '../task-folder/task/task.component';
 import { Member } from '../_interfaces/detailed_member.interface';
 import { ActiveTask } from '../_interfaces/task_active.interface';
