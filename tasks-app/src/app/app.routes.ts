@@ -11,5 +11,5 @@ export const routes: Routes = [
   { path: 'team', component: TeamComponent },
   { path: 'team/:id', component: MemberDetailComponent },
   { path: 'add-form', component: FormTaskComponent },
-  { path: 'edit-form', component: FormTaskComponent },
+  { path: 'edit-form/:id', component: FormTaskComponent },
 ];

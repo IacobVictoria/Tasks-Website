@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ActiveTask } from '../_interfaces/task_active.interface';
-import { Task } from '../task-folder/task/task.interface';
+import { Task } from '../_interfaces/task.interface';
 
 @Injectable({ providedIn: 'root' })
 export class ActiveTaskService {
@@ -21,5 +21,9 @@ export class ActiveTaskService {
   addTask(task: Task): Observable<Task>{
     return this.httpClient.post<Task>(`${this.url2}/add`, task);
   }
-  
+
+  public getTaskByID(id: string): Observable<Task> {
+		return this.httpClient.get<Task>(`${this.url2}/by-id?id=${id}`);
+	}
+
 }

@@ -1,8 +1,30 @@
+:host {
+  position: relative;
+}
+
+.container {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  background-color: #ffffff; /* Background color for the container */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  padding: 2em; /* Padding around content */
+  max-width: 90%; /* Set max width to 90% of viewport */
+  width: 400px; /* Fixed width for larger screens */
+  margin: 50px auto; /* Centering with margin */
+}
+
 .task-form {
   display: flex;
   flex-direction: column;
-  max-width: 400px;
-  margin: 0 auto;
+  max-width: 30em; /* Max width of the form */
+  width: 100%; /* Make the form take full width of container */
+  padding: 2em; /* Adjust padding for smaller screens */
+  border-radius: 0.2em; 
+  background-color: #ffffff; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  border: 1px solid #ddd;
 }
 
 .form-group {
@@ -17,26 +39,50 @@ label {
 
 input,
 textarea {
-  width: 100%;
-  padding: 0.5em;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1em;
+  width: 100%; /* Full width */
+  padding: 0.5em; /* Padding for input fields */
+  border: 1px solid #ccc; /* Border styling */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 1em; /* Font size */
 }
 
 button {
-  padding: 0.5em 1em;
-  border: none;
-  border-radius: 4px;
-  background-color: #007bff;
-  color: #fff;
-  font-size: 1em;
-  cursor: pointer;
-  align-self: flex-start;
+  padding: 0.5em 1em; /* Button padding */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners */
+  background-color: #007bff; /* Button color */
+  color: #fff; /* Text color */
+  font-size: 1em; /* Font size */
+  cursor: pointer; /* Pointer cursor */
+  align-self: flex-start; /* Align button to start */
 }
 
 button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
+  background-color: #ccc; /* Disabled button color */
+  cursor: not-allowed; /* Not allowed cursor */
 }
 
+input[type="date"] {
+  width: 100%; /* Full width */
+  padding: 10px; /* Padding */
+  font-size: 14px; /* Font size */
+  border: 1px solid #ccc; /* Border */
+  border-radius: 4px; /* Rounded corners */
+  background-color: #fff; /* Background color */
+  cursor: pointer; /* Pointer cursor */
+  transition: border-color 0.3s; /* Transition for border color */
+}
+
+input[type="date"]:hover {
+  border-color: #007bff; /* Change border color on hover */
+}
+
+h2 {
+  margin-bottom: 20px; /* Space between title and form */
+  font-size: 24px; /* Title font size */
+  color: #333; /* Title color */
+  text-align: center; /* Center title text */
+}
+
+
+/* TREBUIE RESPONSIVE */

@@ -1,35 +1,53 @@
-div {
-    margin-bottom: 20px;
-  }
-  
-  label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    font-size: 16px;
-  }
-  
-  select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    background-color: #fff;
-    transition: border-color 0.3s;
-  }
-  
-  select:focus {
-    border-color: #007bff;
-    outline: none;
-  }
-  
-  option {
-    color: #999;
-  }
-  
-  select:disabled {
-    background-color: #f9f9f9;
-    color: #ccc;
-  }
-  
+.dropdown-label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+  color: #333;
+}
+
+.dropdown {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-selected {
+  padding: 10px;
+}
+
+.dropdown-list {
+  max-height: 200px; /* Limitează înălțimea */
+  overflow-y: auto; /* Permite scroll */
+  border: 1px solid #ccc;
+  border-radius: 0 0 4px 4px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 1000;
+}
+
+.dropdown-option {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown-option:hover {
+  background-color: #f0f0f0;
+}
+
+.option-name {
+  flex: 1;
+  padding-right: 10px; 
+}
+
+.option-image {
+  width: 20px;
+  height: 20px;
+}
