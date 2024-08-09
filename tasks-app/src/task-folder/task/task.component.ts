@@ -1,5 +1,4 @@
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
-import { Task } from './task.interface';
 import { ActiveTask } from '../../_interfaces/task_active.interface';
 import { Router } from '@angular/router';
 
@@ -18,7 +17,7 @@ export class TaskComponent {
 
   editTask() {
     this.edit.emit(this.task.id);
-    this.router.navigate([`/edit-form`])
+    this.router.navigate([`/edit-form`,this.task.id])
   }
 
   deleteTask() {

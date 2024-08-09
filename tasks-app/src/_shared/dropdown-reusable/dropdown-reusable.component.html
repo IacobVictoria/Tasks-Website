@@ -1,11 +1,10 @@
-<div>
-    <label *ngIf="heading">{{ heading }}</label>
-    <select (change)="onSelect($event)">
-         <!-- cand apas pe cv tr sa emit -->
-      <option [value]="null">{{ placeholder }}</option>
-      <option *ngFor="let item of config.items" [value]="item[valueField]">
-        {{ item[labelField] }}
-      </option>
-    </select>
+<label for="user-dropdown" class="dropdown-label">Select User:</label>
+<div class="dropdown" (click)="toggleDropdown()">
+  <div class="dropdown-selected">{{ selectedValue?.name || 'Select an option' }}</div>
+  <div class="dropdown-list" *ngIf="isOpen">
+    <div class="dropdown-option" *ngFor="let option of options" (click)="selectOption(option)" (click)="toggleDropdown()">
+      <span class="option-name">{{ option.name }}</span>
+      <img [src]="option.imageUrl" alt="{{ option.name }}" class="option-image" />
+    </div>
   </div>
-  
+</div>
