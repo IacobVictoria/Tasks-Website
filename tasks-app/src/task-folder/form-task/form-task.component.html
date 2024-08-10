@@ -1,21 +1,28 @@
-<div class="container"> <!-- Container for title and form -->
-  <h2>{{ formTitle }}</h2> <!-- Titlu dinamic -->
+<div class="container">
+  <!-- Container for title and form -->
+  <h2>{{ formTitle }}</h2>
+  <!-- Titlu dinamic -->
 
   <form [formGroup]="formGroupTask" (ngSubmit)="onSubmit()" class="task-form">
     <div class="form-group">
       <label for="title">Title:</label>
       <input type="text" id="title" formControlName="title" required />
     </div>
-    
+
     <div class="form-group">
       <label for="description">Description:</label>
-      <textarea id="description" formControlName="description" required></textarea>
+      <textarea
+        id="description"
+        formControlName="description"
+        required
+      ></textarea>
     </div>
 
     <app-dropdown-reusable
       [options]="memberOptions"
       [(selectedValue)]="formGroupTask.controls['userId'].value"
-      (selectedValueChange)="onMemberSelect($event)">
+      (selectedValueChange)="onMemberSelect($event)"
+    >
     </app-dropdown-reusable>
 
     <div class="form-group">
@@ -23,6 +30,8 @@
       <input type="date" id="dueDate" formControlName="dueDate" required />
     </div>
 
-    <button type="submit" [disabled]="!formGroupTask.valid">Add Task</button>
+    <button type="submit" [disabled]="!formGroupTask.valid">
+      {{ formTitle === "Add Task" ? "Add Task" : "Edit Task" }}
+    </button>
   </form>
 </div>
