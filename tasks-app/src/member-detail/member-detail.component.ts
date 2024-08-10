@@ -7,6 +7,7 @@ import { ActiveTask } from '../_interfaces/task_active.interface';
 import { ActiveTaskService } from '../_services/active_tasks.service';
 import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 import { RefreshService } from '../_services/refresh.service';
+import { ShowLeavePageConfirmationDialog } from '../_interfaces/show-leave-confirmation-dialog.interface';
 
 @Component({
   selector: 'app-member-detail',
@@ -35,17 +36,20 @@ export class MemberDetailComponent implements OnInit {
 
       this.loadTasks(id);
     }
+
     this.refreshService.refresh$.subscribe(() => {
       if (id) {
         this.loadTasks(id); // Reload tasks when refresh event is triggered
       }
     });
   }
+
   loadTasks(memberId: string): void {
     this.taskService.getTaskActiveById(memberId).subscribe((tasks) => {
       this.tasks = tasks;
     });
   }
+
   deleteTask(event: string): void {
     this.showConfirmationDialog = true;
     this.taskToDelete = event;
@@ -70,4 +74,6 @@ export class MemberDetailComponent implements OnInit {
   navigateToForm() {
     this.router.navigate([`/add-form`]);
   }
+
+ 
 }

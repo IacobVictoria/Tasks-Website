@@ -22,6 +22,8 @@ import { CommonModule } from '@angular/common';
 import { MemberDropdownOption } from '../../_interfaces/member-dropdown.interface';
 import { Task } from '../../_interfaces/task.interface';
 import { ActivatedRoute } from '@angular/router';
+import { UpdateTaskRequest } from '../../_interfaces/update_task_request.interface';
+import { ShowLeavePageConfirmationDialog } from '../../_interfaces/show-leave-confirmation-dialog.interface';
 
 @Component({
   selector: 'app-form-task',
@@ -30,11 +32,10 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './form-task.component.html',
   styleUrl: './form-task.component.css',
 })
-export class FormTaskComponent implements OnInit {
+export class FormTaskComponent implements OnInit, ShowLeavePageConfirmationDialog {
   // sa se deschida form ul asta si daca am de adaugat si daca am de editat
   //daca e de editat sa imi apara datele deja acolo
   formGroupTask!: FormGroup;
-  @Input() task!: Task | null; // input pt a primi date de la componenta parinte
   @Output() formSubmitted = new EventEmitter<Task>(); // trimite catre parinte
   members: SummaryMember[] = [];
   private taskService = inject(ActiveTaskService);
@@ -42,6 +43,7 @@ export class FormTaskComponent implements OnInit {
   route = inject(ActivatedRoute);
   memberOptions: MemberDropdownOption[] = []; // tr sa fac un array de options ca sa pot sa bag in dropdown ul reutilizabil
   formTitle: string = '';
+  isSubmitting: boolean = false;
 
   constructor(private fb: FormBuilder) {
     const currentDate = new Date().toISOString().split('T')[0];
@@ -84,6 +86,8 @@ export class FormTaskComponent implements OnInit {
         console.error('Error fetching members:', error);
       },
     });
+
+
   }
 
   transformMembersToDropdownOptions(
@@ -103,27 +107,63 @@ export class FormTaskComponent implements OnInit {
 
   onSubmit(): void {
     const currentDate = new Date().toISOString().split('T')[0];
+  
     if (this.formGroupTask.valid) {
-      const formData: Task = {
-        ...this.formGroupTask.value,
-        id: this.task ? this.task.id : this.generateRandomId(), // Retain task ID for editing
-        status: 1,
-        completedAt: currentDate, // Asigură-te că este null
-        startedAt: currentDate,
-      };
-      console.log(formData);
-      this.taskService.addTask(formData).subscribe({
-        next: (response) => {
-          console.log('Task added successfully:', response);
+      this.isSubmitting = true;
 
-          this.formGroupTask.reset();
-        },
-        error: (error) => {
-          console.error('Error adding task:', error);
-        },
-      });
+      let formData: Task;
+      let formDataUpdate: UpdateTaskRequest;
+
+      if (this.formTitle === 'Add Task') {
+        // Construiește formData pentru adăugarea unui task nou, inclusiv userId
+        formData = {
+          ...this.formGroupTask.value,
+          id: this.generateRandomId(), // Generează un ID nou
+          status: 1,
+          completedAt: currentDate,
+          startedAt: currentDate,
+        };
+        this.taskService.addTask(formData).subscribe({
+          next: (response) => {
+            console.log('Task added successfully:', response);
+            this.formGroupTask.reset();
+            this.isSubmitting = false;
+          },
+          error: (error) => {
+            console.error('Error adding task:', error);
+            this.isSubmitting = false;
+          },
+        });
+      } else {
+        // Construiește formData pentru actualizarea unui task existent, fără userId
+        const { title, description, dueDate, userId } = this.formGroupTask.value;
+        const taskId = this.route.snapshot.paramMap.get('id');
+        formDataUpdate = {
+          id: String(taskId), // Folosește ID-ul existent
+          title,
+          description,
+          userId,
+          dueDate,
+          status:1, // păstrează statusul existent sau un status nou dacă e nevoie
+          completedAt: currentDate,
+        };
+        console.log(formDataUpdate);
+        this.taskService.editTask(formDataUpdate).subscribe({
+          next: (response) => {
+            console.log('Task updated successfully:', response);
+            this.formGroupTask.reset();
+            this.isSubmitting = false;
+          },
+          error: (error) => {
+            console.error('Error updating task:', error);
+            this.isSubmitting = false;
+          },
+        });
+      }
     }
   }
+  
+
 
   onMemberSelect(event: Member) {
     if (event && event.id) {
@@ -132,4 +172,8 @@ export class FormTaskComponent implements OnInit {
       });
     }
   }
+
+  showLeavePageConfirmationDialog(): boolean {
+		return this.formGroupTask.dirty && !this.isSubmitting;
+	}
 }

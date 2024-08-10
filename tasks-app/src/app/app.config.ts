@@ -21,6 +21,6 @@ export const appConfig: ApplicationConfig = {
       withFetch(),
       withInterceptors([notificationInterceptor, loadingInterceptor])
     ),
-    provideAnimationsAsync(),
+    provideAnimationsAsync(), provideAnimationsAsync(),
   ],
 };
